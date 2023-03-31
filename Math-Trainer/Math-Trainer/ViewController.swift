@@ -22,8 +22,8 @@ class ViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        comnfigureButtons()
+
+        configureButtons(buttonsCollection ?? [])
     }
 
     // MARK: - Actions
@@ -41,9 +41,9 @@ class ViewController: UIViewController {
         }
     }
 
-    private func comnfigureButtons() {
+    func configureButtons(_ buttons: [UIButton]) {
         // Add shadow
-        buttonsCollection.forEach { button in
+        buttons.forEach { button in
             button.layer.shadowColor = UIColor.darkGray.cgColor
             button.layer.shadowOffset = CGSize(width: 0, height: 2)
             button.layer.shadowOpacity = 0.4
