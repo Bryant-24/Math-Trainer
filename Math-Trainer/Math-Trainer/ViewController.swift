@@ -40,12 +40,6 @@ class ViewController: UIViewController {
     }
 
     private func configureButtons(_ buttons: [UIButton]) {
-        // Add shadow
-        buttons.forEach { button in
-            button.layer.shadowColor = UIColor.darkGray.cgColor
-            button.layer.shadowOffset = CGSize(width: 0, height: 2)
-            button.layer.shadowOpacity = 0.4
-            button.layer.shadowRadius = 3.0
-        }
+        buttons.forEach { $0.addShadow() }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44C2EAC229DB61020057064B /* UIButton+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2EAC129DB61020057064B /* UIButton+Shadow.swift */; };
 		44DA7C7329D78CDB002003B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DA7C7229D78CDB002003B0 /* AppDelegate.swift */; };
 		44DA7C7529D78CDB002003B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DA7C7429D78CDB002003B0 /* SceneDelegate.swift */; };
 		44DA7C7729D78CDB002003B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DA7C7629D78CDB002003B0 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44C2EAC129DB61020057064B /* UIButton+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Shadow.swift"; sourceTree = "<group>"; };
 		44DA7C6F29D78CDB002003B0 /* Math-Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Math-Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44DA7C7229D78CDB002003B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44DA7C7429D78CDB002003B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				44DA7C7429D78CDB002003B0 /* SceneDelegate.swift */,
 				44DA7C7629D78CDB002003B0 /* ViewController.swift */,
 				44DA7C8629D795A9002003B0 /* TrainViewController.swift */,
+				44C2EAC129DB61020057064B /* UIButton+Shadow.swift */,
 				44DA7C7829D78CDB002003B0 /* Main.storyboard */,
 				44DA7C7B29D78CDD002003B0 /* Assets.xcassets */,
 				44DA7C7D29D78CDD002003B0 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C2EAC229DB61020057064B /* UIButton+Shadow.swift in Sources */,
 				44DA7C7729D78CDB002003B0 /* ViewController.swift in Sources */,
 				44DA7C8729D795A9002003B0 /* TrainViewController.swift in Sources */,
 				44DA7C7329D78CDB002003B0 /* AppDelegate.swift in Sources */,
