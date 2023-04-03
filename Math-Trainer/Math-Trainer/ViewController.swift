@@ -12,7 +12,6 @@ enum MathTypes: Int {
 }
 
 class ViewController: UIViewController {
-
     // MARK: - IBOutlets
     @IBOutlet var buttonsCollection: [UIButton]!
 
@@ -22,8 +21,7 @@ class ViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configureButtons(buttonsCollection ?? [])
+        configureButtons(buttonsCollection)
     }
 
     // MARK: - Actions
@@ -41,7 +39,7 @@ class ViewController: UIViewController {
         }
     }
 
-    func configureButtons(_ buttons: [UIButton]) {
+    private func configureButtons(_ buttons: [UIButton]) {
         // Add shadow
         buttons.forEach { button in
             button.layer.shadowColor = UIColor.darkGray.cgColor
@@ -50,7 +48,4 @@ class ViewController: UIViewController {
             button.layer.shadowRadius = 3.0
         }
     }
-
-
 }
-
