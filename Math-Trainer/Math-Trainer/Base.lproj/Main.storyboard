@@ -216,6 +216,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addCountLabel" destination="zhi-KD-itK" id="1D7-mF-YkG"/>
+                        <outlet property="devideCountLabel" destination="cJ9-Eh-XwH" id="n4E-vz-7qh"/>
+                        <outlet property="multiplyCountLabel" destination="fIk-MV-WUO" id="O8O-tv-IKa"/>
+                        <outlet property="subtractCountLabel" destination="IC9-de-xfk" id="oM6-WL-IzD"/>
                         <outletCollection property="buttonsCollection" destination="XCe-20-K8T" collectionClass="NSMutableArray" id="gnf-f7-UZG"/>
                         <outletCollection property="buttonsCollection" destination="0MA-ja-ke6" collectionClass="NSMutableArray" id="COz-F0-WYm"/>
                         <outletCollection property="buttonsCollection" destination="j1a-Dh-cZs" collectionClass="NSMutableArray" id="g9X-j4-jkL"/>
@@ -225,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73" y="4"/>
+            <point key="canvasLocation" x="72.51908396946564" y="3.5211267605633805"/>
         </scene>
         <!--Train View Controller-->
         <scene sceneID="V2X-18-4X2">
@@ -300,12 +304,20 @@
                                     <action selector="rightAction:" destination="4Bg-BG-x3e" eventType="touchUpInside" id="RIZ-Uk-Xof"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQf-XR-Rtt">
+                                <rect key="frame" x="277" y="57" width="66" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UEm-bw-PrD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wiM-QX-Dwb" firstAttribute="centerX" secondItem="l5i-Ig-La5" secondAttribute="centerX" constant="-60" id="2Xh-Lh-FWW"/>
                             <constraint firstItem="z7y-lt-zgq" firstAttribute="top" secondItem="UEm-bw-PrD" secondAttribute="top" constant="50" id="4cD-9e-bAP"/>
+                            <constraint firstItem="uQf-XR-Rtt" firstAttribute="centerY" secondItem="z7y-lt-zgq" secondAttribute="centerY" id="5lP-k3-QBs"/>
+                            <constraint firstItem="UEm-bw-PrD" firstAttribute="trailing" secondItem="uQf-XR-Rtt" secondAttribute="trailing" constant="50" id="6QM-E3-OAk"/>
                             <constraint firstItem="G1W-3u-vI5" firstAttribute="centerY" secondItem="wiM-QX-Dwb" secondAttribute="centerY" id="AWD-2O-tDB"/>
                             <constraint firstItem="wiM-QX-Dwb" firstAttribute="top" secondItem="Hkl-hs-qet" secondAttribute="bottom" constant="120" id="CXO-vv-fxR"/>
                             <constraint firstItem="Hkl-hs-qet" firstAttribute="centerY" secondItem="l5i-Ig-La5" secondAttribute="centerY" constant="-30" id="IMo-6X-YSa"/>
@@ -317,6 +329,7 @@
                     <navigationItem key="navigationItem" id="VHo-eG-TIh"/>
                     <connections>
                         <outlet property="backButton" destination="z7y-lt-zgq" id="n3C-0j-Avj"/>
+                        <outlet property="countLabel" destination="uQf-XR-Rtt" id="vC0-XC-TdH"/>
                         <outlet property="leftButton" destination="wiM-QX-Dwb" id="AKE-Hd-Dlu"/>
                         <outlet property="questionLabel" destination="Hkl-hs-qet" id="Abu-oW-1cQ"/>
                         <outlet property="rightButton" destination="G1W-3u-vI5" id="Av2-Di-Ss9"/>

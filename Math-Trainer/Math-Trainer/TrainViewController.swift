@@ -13,7 +13,8 @@ final class TrainViewController: UIViewController {
     @IBOutlet var rightButton: UIButton!
     @IBOutlet var backButton: UIButton!
     @IBOutlet var questionLabel: UILabel!
-
+    @IBOutlet var countLabel: UILabel!
+    
     // MARK: - Properties
     var type: MathTypes = .add {
         didSet {
@@ -32,8 +33,8 @@ final class TrainViewController: UIViewController {
     
     private var firstNumber = 0
     private var secondNumber = 0
-    private var sign: String = ""
-    private var count: Int = 0 {
+    var sign: String = ""
+    var count: Int = 0 {
         didSet {
             print("Count: \(count)")
         }
@@ -59,10 +60,10 @@ final class TrainViewController: UIViewController {
     }
     
     // MARK: - IBActions
-    
     @IBAction func leftAction(_ sender: UIButton) {
         check(answer: sender.titleLabel?.text ?? "", for: sender)
     }
+
     @IBAction func rightAction(_ sender: UIButton) {
         check(answer: sender.titleLabel?.text ?? "", for: sender)
     }
@@ -83,11 +84,24 @@ final class TrainViewController: UIViewController {
     }
     
     private func configureQuestion() {
-        firstNumber = Int.random(in: 1...99)
-        secondNumber = Int.random(in: 1...99)
+        (firstNumber, secondNumber) = getTwoRandomNumbers()
+
+        if type == .devide {
+            repeat {
+                (firstNumber, secondNumber) = getTwoRandomNumbers()
+            } while isNotCorrectDivisorOrDividend(divisor: firstNumber, dividend: secondNumber)
+        }
         
-        let question:String = "\(firstNumber) \(sign) \(secondNumber) = "
+        let question: String = "\(firstNumber) \(sign) \(secondNumber) = "
         questionLabel.text = question
+    }
+    
+    private func getTwoRandomNumbers() -> (Int, Int) {
+        return (Int.random(in: 1...99), Int.random(in: 1...99))
+    }
+    
+    private func isNotCorrectDivisorOrDividend(divisor: Int, dividend: Int) -> Bool {
+        return (divisor % dividend != 0) || (divisor == dividend) || (divisor == 1 || dividend == 1)
     }
     
     private func check(answer: String, for button: UIButton) {
@@ -102,6 +116,7 @@ final class TrainViewController: UIViewController {
                 self?.configureQuestion()
                 self?.configureButtons()
             }
+            countLabel.text = "Count: \(count)"
         }
     }
 }
