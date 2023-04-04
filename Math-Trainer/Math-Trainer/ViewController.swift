@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureButtons(buttonsCollection)
+        configureButtons()
     }
 
     // MARK: - Actions
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         }
     }
 
-    private func configureButtons(_ buttons: [UIButton]) {
-        buttons.forEach { $0.addShadow() }
+    private func configureButtons() {
+        buttonsCollection.forEach { $0.addShadow() }
     }
 }
