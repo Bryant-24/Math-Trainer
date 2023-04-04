@@ -54,7 +54,6 @@ final class TrainViewController: UIViewController {
 
     // MARK: - Life cycle
     override func viewDidLoad() {
-        stylizeButtons()
         configureQuestion()
         configureButtons()
     }
@@ -69,11 +68,9 @@ final class TrainViewController: UIViewController {
     }
     
     // MARK: - Methods
-    private func stylizeButtons() {
-        [leftButton, rightButton, backButton].forEach { $0.addShadow() }
-    }
-    
     private func configureButtons() {
+        [leftButton, rightButton, backButton].forEach { $0.addShadow() }
+
         let isRightButton = Bool.random()
         var randomAnswer: Int
         
@@ -102,7 +99,6 @@ final class TrainViewController: UIViewController {
             let isSecondAttempt: Bool = rightButton.backgroundColor == .red || leftButton.backgroundColor == .red
             count += isSecondAttempt ? 0 : 1
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-                self?.stylizeButtons()
                 self?.configureQuestion()
                 self?.configureButtons()
             }
