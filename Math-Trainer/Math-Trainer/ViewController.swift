@@ -21,15 +21,11 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     private var selectedType: MathTypes = .add
-    private var addCount: Int = 0
-    private var subtractCount: Int = 0
-    private var multiplyCount: Int = 0
-    private var devideCount: Int = 0
 
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureButtons()
+        customizeButtons()
     }
 
     // MARK: - Actions
@@ -40,19 +36,16 @@ class ViewController: UIViewController {
     
     @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
         if let sourceViewController = unwindSegue.source as? TrainViewController {
+            let count = Int(sourceViewController.count)
             switch selectedType {
             case .add:
-                addCount += Int(sourceViewController.count)
-                addCountLabel.text = String(addCount)
+                addCountLabel.text = String(count)
             case .subtract:
-                subtractCount += Int(sourceViewController.count)
-                subtractCountLabel.text = String(subtractCount)
+                subtractCountLabel.text = String(count)
             case .multiply:
-                multiplyCount += Int(sourceViewController.count)
-                multiplyCountLabel.text = String(multiplyCount)
+                multiplyCountLabel.text = String(count)
             case .devide:
-                devideCount += Int(sourceViewController.count)
-                devideCountLabel.text = String(devideCount)
+                devideCountLabel.text = String(count)
             }
         }
     }
@@ -64,7 +57,7 @@ class ViewController: UIViewController {
         }
     }
 
-    private func configureButtons() {
+    private func customizeButtons() {
         buttonsCollection.forEach { $0.addShadow() }
     }
 }

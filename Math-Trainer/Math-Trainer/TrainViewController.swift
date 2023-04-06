@@ -16,6 +16,8 @@ final class TrainViewController: UIViewController {
     @IBOutlet var countLabel: UILabel!
     
     // MARK: - Properties
+    var sign: String = ""
+    var count: Int = 0
     var type: MathTypes = .add {
         didSet {
             switch type {
@@ -33,12 +35,6 @@ final class TrainViewController: UIViewController {
     
     private var firstNumber = 0
     private var secondNumber = 0
-    var sign: String = ""
-    var count: Int = 0 {
-        didSet {
-            print("Count: \(count)")
-        }
-    }
     
     private var answer: Int {
         switch type {
@@ -55,6 +51,7 @@ final class TrainViewController: UIViewController {
 
     // MARK: - Life cycle
     override func viewDidLoad() {
+        customizeButtons()
         configureQuestion()
         configureButtons()
     }
@@ -69,8 +66,12 @@ final class TrainViewController: UIViewController {
     }
     
     // MARK: - Methods
-    private func configureButtons() {
+    private func customizeButtons() {
         [leftButton, rightButton, backButton].forEach { $0.addShadow() }
+    }
+    private func configureButtons() {
+        rightButton.layer.backgroundColor = UIColor.systemYellow.cgColor
+        leftButton.layer.backgroundColor = UIColor.systemYellow.cgColor
 
         let isRightButton = Bool.random()
         var randomAnswer: Int
@@ -101,7 +102,7 @@ final class TrainViewController: UIViewController {
     }
     
     private func isNotCorrectDivisorOrDividend(divisor: Int, dividend: Int) -> Bool {
-        return (divisor % dividend != 0) || (divisor == dividend) || (divisor == 1 || dividend == 1)
+        return (divisor % dividend != 0) || (divisor == dividend) || dividend == 1
     }
     
     private func check(answer: String, for button: UIButton) {
@@ -112,7 +113,11 @@ final class TrainViewController: UIViewController {
         if isRightAnswer {
             let isSecondAttempt: Bool = rightButton.backgroundColor == .red || leftButton.backgroundColor == .red
             count += isSecondAttempt ? 0 : 1
+            rightButton.isEnabled = false
+            leftButton.isEnabled = false
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                self?.rightButton.isEnabled = true
+                self?.leftButton.isEnabled = true
                 self?.configureQuestion()
                 self?.configureButtons()
             }
