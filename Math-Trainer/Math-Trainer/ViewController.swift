@@ -21,6 +21,10 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     private var selectedType: MathTypes = .add
+    private var addCount: Int = 0
+    private var subtractCount: Int = 0
+    private var multiplyCount: Int = 0
+    private var devideCount: Int = 0
 
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -39,13 +43,17 @@ class ViewController: UIViewController {
             let rightAnswersCount = Int(sourceViewController.count)
             switch selectedType {
             case .add:
-                addCountLabel.text = String(rightAnswersCount)
+                addCount += rightAnswersCount
+                addCountLabel.text = String(addCount)
             case .subtract:
-                subtractCountLabel.text = String(rightAnswersCount)
+                subtractCount += rightAnswersCount
+                subtractCountLabel.text = String(subtractCount)
             case .multiply:
-                multiplyCountLabel.text = String(rightAnswersCount)
+                multiplyCount += rightAnswersCount
+                multiplyCountLabel.text = String(multiplyCount)
             case .devide:
-                devideCountLabel.text = String(rightAnswersCount)
+                devideCount += rightAnswersCount
+                devideCountLabel.text = String(devideCount)
             }
         }
     }
