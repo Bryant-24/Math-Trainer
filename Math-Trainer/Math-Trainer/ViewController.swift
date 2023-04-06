@@ -36,16 +36,16 @@ class ViewController: UIViewController {
     
     @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
         if let sourceViewController = unwindSegue.source as? TrainViewController {
-            let count = Int(sourceViewController.count)
+            let rightAnswersCount = Int(sourceViewController.count)
             switch selectedType {
             case .add:
-                addCountLabel.text = String(count)
+                addCountLabel.text = String(rightAnswersCount)
             case .subtract:
-                subtractCountLabel.text = String(count)
+                subtractCountLabel.text = String(rightAnswersCount)
             case .multiply:
-                multiplyCountLabel.text = String(count)
+                multiplyCountLabel.text = String(rightAnswersCount)
             case .devide:
-                devideCountLabel.text = String(count)
+                devideCountLabel.text = String(rightAnswersCount)
             }
         }
     }
