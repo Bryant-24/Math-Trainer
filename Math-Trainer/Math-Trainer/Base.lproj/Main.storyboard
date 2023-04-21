@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -215,6 +216,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addCountLabel" destination="zhi-KD-itK" id="1D7-mF-YkG"/>
+                        <outlet property="devideCountLabel" destination="cJ9-Eh-XwH" id="n4E-vz-7qh"/>
+                        <outlet property="multiplyCountLabel" destination="fIk-MV-WUO" id="O8O-tv-IKa"/>
+                        <outlet property="subtractCountLabel" destination="IC9-de-xfk" id="oM6-WL-IzD"/>
                         <outletCollection property="buttonsCollection" destination="XCe-20-K8T" collectionClass="NSMutableArray" id="gnf-f7-UZG"/>
                         <outletCollection property="buttonsCollection" destination="0MA-ja-ke6" collectionClass="NSMutableArray" id="COz-F0-WYm"/>
                         <outletCollection property="buttonsCollection" destination="j1a-Dh-cZs" collectionClass="NSMutableArray" id="g9X-j4-jkL"/>
@@ -224,18 +229,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73" y="4"/>
+            <point key="canvasLocation" x="72.51908396946564" y="3.5211267605633805"/>
         </scene>
         <!--Train View Controller-->
         <scene sceneID="V2X-18-4X2">
             <objects>
                 <viewController id="4Bg-BG-x3e" customClass="TrainViewController" customModule="Math_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l5i-Ig-La5">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7y-lt-zgq">
-                                <rect key="frame" x="50" y="109" width="62" height="35"/>
+                                <rect key="frame" x="50" y="50" width="62" height="35"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -250,13 +255,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34 + 53 =" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkl-hs-qet">
-                                <rect key="frame" x="102" y="337.66666666666669" width="189" height="48"/>
+                                <rect key="frame" x="102" y="367" width="189" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiM-QX-Dwb">
-                                <rect key="frame" x="96.666666666666686" y="505.66666666666674" width="80" height="80"/>
+                                <rect key="frame" x="96.666666666666686" y="535" width="80" height="80"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="GlM-MW-rP5"/>
@@ -274,10 +279,11 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rvB-go-wTj"/>
+                                    <action selector="leftAction:" destination="4Bg-BG-x3e" eventType="touchUpInside" id="B5V-9K-zV8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1W-3u-vI5">
-                                <rect key="frame" x="216.66666666666663" y="505.66666666666674" width="80" height="80"/>
+                                <rect key="frame" x="216.66666666666663" y="535" width="80" height="80"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Kcw-Vf-CNX"/>
@@ -295,14 +301,23 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kxF-SQ-p3V"/>
+                                    <action selector="rightAction:" destination="4Bg-BG-x3e" eventType="touchUpInside" id="RIZ-Uk-Xof"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQf-XR-Rtt">
+                                <rect key="frame" x="277" y="57" width="66" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UEm-bw-PrD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wiM-QX-Dwb" firstAttribute="centerX" secondItem="l5i-Ig-La5" secondAttribute="centerX" constant="-60" id="2Xh-Lh-FWW"/>
                             <constraint firstItem="z7y-lt-zgq" firstAttribute="top" secondItem="UEm-bw-PrD" secondAttribute="top" constant="50" id="4cD-9e-bAP"/>
+                            <constraint firstItem="uQf-XR-Rtt" firstAttribute="centerY" secondItem="z7y-lt-zgq" secondAttribute="centerY" id="5lP-k3-QBs"/>
+                            <constraint firstItem="UEm-bw-PrD" firstAttribute="trailing" secondItem="uQf-XR-Rtt" secondAttribute="trailing" constant="50" id="6QM-E3-OAk"/>
                             <constraint firstItem="G1W-3u-vI5" firstAttribute="centerY" secondItem="wiM-QX-Dwb" secondAttribute="centerY" id="AWD-2O-tDB"/>
                             <constraint firstItem="wiM-QX-Dwb" firstAttribute="top" secondItem="Hkl-hs-qet" secondAttribute="bottom" constant="120" id="CXO-vv-fxR"/>
                             <constraint firstItem="Hkl-hs-qet" firstAttribute="centerY" secondItem="l5i-Ig-La5" secondAttribute="centerY" constant="-30" id="IMo-6X-YSa"/>
@@ -313,9 +328,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="VHo-eG-TIh"/>
                     <connections>
-                        <outlet property="buttonBack" destination="z7y-lt-zgq" id="iF0-Vv-s3R"/>
-                        <outletCollection property="buttonsAnswerCollection" destination="wiM-QX-Dwb" collectionClass="NSMutableArray" id="gRY-x3-2Wf"/>
-                        <outletCollection property="buttonsAnswerCollection" destination="G1W-3u-vI5" collectionClass="NSMutableArray" id="1uI-uO-N3H"/>
+                        <outlet property="backButton" destination="z7y-lt-zgq" id="n3C-0j-Avj"/>
+                        <outlet property="countLabel" destination="uQf-XR-Rtt" id="vC0-XC-TdH"/>
+                        <outlet property="leftButton" destination="wiM-QX-Dwb" id="AKE-Hd-Dlu"/>
+                        <outlet property="questionLabel" destination="Hkl-hs-qet" id="Abu-oW-1cQ"/>
+                        <outlet property="rightButton" destination="G1W-3u-vI5" id="Av2-Di-Ss9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x9E-mH-3vK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
